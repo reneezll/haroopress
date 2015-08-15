@@ -69,6 +69,10 @@ app.get('/archives', function(req, res) {
 });
 
 
+app.get('/search', function(req, res) {
+    console.log('render search');
+    res.render('search', data);
+});
 app.get('/slides', function(req, res) {
     var _layout = data.layout;
     data.layout = '../layout';

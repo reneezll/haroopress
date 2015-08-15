@@ -28,6 +28,7 @@ gen.clone(function() {
     gen.authors();
     gen.author();
     gen.pages();
+    gen.search();
 
     showContentStatus();
 });
