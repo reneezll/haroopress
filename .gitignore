@@ -7,7 +7,7 @@ atlassian-ide-plugin.xml
 _deploy
 _public
 source/data
-config.js
+#config.js
 lib/Makefile
 *.done
 
