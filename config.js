@@ -48,17 +48,17 @@ module.exports = {
             "tweetCount": 10
         },
         "twitter": {
-            "display": false,
-            "user": "",
-            "tweetButton": false
+            "display": true,
+            "user": "yangjuseung",
+            "tweetButton": true
         },
         "facebook": {
-            "display": false,
-            "user": "",
-            "showLikeButton": false
+            "display": true,
+            "user": "reneezll@nate.com",
+            "showLikeButton": true
         },
         "google": {
-            "display": false,
+            "display": true,
             "googlePlusSize": "medium"
         },
         "disqus": {
