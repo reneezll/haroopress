@@ -68,7 +68,7 @@ module.exports = {
         },
         "delicious": {},
         "contributors": {
-            "display": true,
+            "display": false,
             "sort": "DESC",
             "count": 5
         },
