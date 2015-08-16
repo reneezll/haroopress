@@ -1,0 +1,49 @@
+<%
+    var codeStyle = config.defaultCodeStyle;
+%>
+<link href="/css/code/<%=codeStyle%>.css" rel="stylesheet">
+
+<div class="container">
+    <div class="row">
+        <div class="span3 side">
+            <%- partial('plugins/intro', config) %>
+            <%- partial('plugins/category-menu', { categories: categories }) %>
+            <%- partial('plugins/contributors', { contributors: config.plugins.contributors, authors: authors, authorsOrder: authorsOrder }) %>
+            <%- partial('plugins/github-repo', config.plugins.github) %>
+        </div>
+        <div class="span9 articles">
+            <%
+                var article, limit = config.pagenate < dates.serialize.length ? config.pagenate : dates.serialize.length;
+                for(var id = 0; id < limit; id++) {
+                    article = dates.serialize[id];
+            %>
+            <div class="row">
+                <div class="span9">
+                    <div class="well">
+                        <div class="page-header">
+                            <p class="meta">
+                                Javascript <!-- 임시 카테고리 -->
+                                <span class="time"><!-- %= article.head.published % -->04.05.2012</span>
+                            </p>
+                            <h1>
+                                <img src="<%= article.author._gravatar %>" width="50" class="thumb" />
+                                <a href="/post/<%= article._file %>"><%= article.head.title %></a>
+                            </h1>
+                        </div>
+                        <div class="markdown-wrapper">
+                            <%- article.cuthtml %>
+                        </div>
+                        <div class="meta clearfix">
+                            <a class="cmt" href="/post/<%= article._file %>/#disqus_thread" data-disqus-identifier="<%= article._file %>"></a>
+                            <a class="more" href="/post/<%= article._file %>">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div><!-- /container -->
+
+<%- partial('plugins/disqus-comment-count', config.plugins.disqus) %>
+<%- partial('plugins/weather', config.plugins) %>

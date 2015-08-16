@@ -1,0 +1,10 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Swap Files #
+*.swp
+.DS_Store
