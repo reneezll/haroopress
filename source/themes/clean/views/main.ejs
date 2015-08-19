@@ -25,6 +25,11 @@
                             </p>
                         </div>
                         <div class="markdown-wrapper">
+                             <!-- tags -->
+                             <strong>tags</strong> :
+                             <% article.head.tags.forEach(function(tag) { %>
+                              <span class="label label-success">#<%= tag %></span>,&nbsp;
+                              <% }) %>
                             <%- article.cuthtml %>
                         </div>
                         <div class="meta clearfix">

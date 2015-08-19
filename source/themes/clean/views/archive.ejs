@@ -20,6 +20,12 @@
                         </div>
 
                         <div class="markdown-wrapper">
+                             <!-- tags -->
+                             <strong>tags</strong> :
+                             <% archive.head.tags.forEach(function(tag) { %>
+                              <span class="label label-success">#<%= tag %></span>,&nbsp;
+                              <% }) %>
+
                             <%- archive.html %>
                         </div>
                         <%- partial('plugins/prev-next', { prev: archive.prev, next: archive.next }) %>
